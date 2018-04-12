@@ -15,5 +15,10 @@
   		<artifactId>spring-webmvc</artifactId>
   		<version>4.3.14.RELEASE</version>
   	</dependency>
+  	<dependency>
+  		<groupId>javax.servlet</groupId>
+  		<artifactId>javax.servlet-api</artifactId>
+  		<version>3.1.0</version>
+  	</dependency>
   </dependencies>
 </project>

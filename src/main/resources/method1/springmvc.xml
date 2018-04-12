@@ -11,15 +11,29 @@
                         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd ">
 
 	<!--配置组件扫描  -->
-	<context:component-scan base-package="controller"></context:component-scan>
+	<context:component-scan base-package="method1.controller"></context:component-scan>
 	
 	<!--配置springmvc注解扫描  -->
 	<mvc:annotation-driven></mvc:annotation-driven>
 	
 	<!--配置视图解析器  -->
-	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INFO/jsp/"/>
+		<property name="prefix" value="/WEB-INF/jsp/"/>
 		<property name="suffix" value=".jsp"/>
 	</bean>
+	
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<!--
+					key的值为异常类
+					error为视图名
+				  -->
+				<prop key="java.lang.NumberFormatException">error1</prop>
+				<prop key="java.lang.StringIndexOutOfBoundsException">error2</prop>
+			</props>
+		</property>
+	
+	</bean>	
+	
 </beans>
